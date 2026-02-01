@@ -2,7 +2,7 @@ d3.json('https://raw.githubusercontent.com/meemeealm/cdn/refs/heads/main/build/c
   .then(function(data) {
     console.log('Data loaded:', data);
     
-    var lastYear = data[data.length - 1].year;
+    let lastYear = data[data.length - 1].year;
     console.log('Using year:', lastYear);
     
     drawDashboard(lastYear, data);
@@ -12,8 +12,8 @@ d3.json('https://raw.githubusercontent.com/meemeealm/cdn/refs/heads/main/build/c
 function drawDashboard(year, data) {
   d3.select('.dashboard').html('');
   
-  var index = -1;
-  for (var i = 0; i < data.length; i++) {
+  let index = -1;
+  for (let i = 0; i < data.length; i++) {
     if (data[i].year === year) {
       index = i;
       break;
